@@ -156,7 +156,7 @@
           <div class="card card-h-100">
             <div class="card-body">
               <div class="d-flex flex-wrap align-items-center mb-4">
-                <h5 class="card-title me-2">Total Income</h5> 
+                <h5 class="u-card-title me-2">Total Income</h5> 
                 <div class="ms-auto">
                   <div></div>
                 </div>
@@ -183,7 +183,7 @@
                 <div class="card-body">
                   <div>
                     <div class="d-flex flex-wrap align-items-center mb-4">
-                      <h5 class="card-title me-2">Investment Overview</h5>
+                      <h5 class="u-card-title me-2">Investment Overview</h5>
                     </div>
                     <div class="row align-items-center">
                       <div class="col-sm">
@@ -258,7 +258,7 @@
           <div class="card">
             <div class="card-body">
               <div class="d-flex flex-wrap align-items-center mb-4">
-                <h5 class="card-title me-2">Rank Achievers</h5> 
+                <h5 class="u-card-title me-2">Rank Achievers</h5> 
                 <div class="ms-auto"></div>
               </div>
             </div>
@@ -268,7 +268,7 @@
           <div class="card">
               <div class="card-body">
                   <div class="d-flex flex-wrap align-items-center mb-4">
-                      <h5 class="card-title me-2">Sales by Locations&nbsp</h5> 
+                      <h5 class="u-card-title me-2">Sales by Locations&nbsp</h5> 
                       <div class="ms-auto">
                           <div class="dropdown">
                               <a href="#" id="dropdownMenuButton" class="dropdown-toggle text-reset" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
@@ -289,8 +289,8 @@
       <div class="row dtw">
         <div class="col-xl-4">
           <div class="card">
-            <div class="card-header align-items-center d-flex">
-              <h4 class="card-title mb-0 flex-grow-1">Add Funds</h4>
+            <div class="u-card-header align-items-center d-flex">
+              <h4 class="u-card-title mb-0 flex-grow-1">Add Funds</h4>
             </div>
             <div class="card-body">
               <div class="tab-content">
@@ -303,10 +303,10 @@
                   </div> 
                   <h5 class="font-size-14 mb-4">Available Balance</h5> 
                   <div>
-                      <div>
+                      <div class="amount_input">
                           <div class="input-group mb-3">
                               <label class="input-group-text">Amount</label> 
-                              <input type="number" name="amount" min="1" step="1" onkeypress="" title="Numbers only" placeholder="" class="form-control" aria-required="true" aria-invalid="false"> 
+                              <input class="form-group-control" value="0" type="number" name="amount" min="1" step="1" onkeypress="" title="Numbers only" placeholder="" aria-required="true" aria-invalid="false"> 
                               <label class="input-group-text">$</label> 
                           </div>
                       </div> 
@@ -335,16 +335,12 @@
         </div>
         <div class="col-xl-4">
           <div class="card">
-            <div class="card-header align-items-center d-flex">
-              <h4 class="card-title mb-0 flex-grow-1">Income</h4>
+            <div class="u-card-header align-items-center d-flex">
+              <h4 class="u-card-title mb-0 flex-grow-1">Income</h4>
               <div class="flex-shrink-0">
-                <ul role="tablist" class="nav justify-content-end nav-tabs-custom rounded card-header-tabs ">
-                  <li class="nav-item">
-                    <a data-bs-toggle="tab" href="#transactions-all-tab" role="tab" class="card-nav-link active">
-                      All
-                    </a>
-                  </li>
-                </ul>
+                <a data-bs-toggle="tab" href="#transactions-all-tab" role="tab" class="card-nav-link active">
+                  All
+                </a>
               </div>
             </div>
             <div class="card-body px-0">
@@ -383,8 +379,8 @@
         </div>
         <div class="col-xl-4">
           <div class="card">
-            <div class="card-header align-items-center d-flex">
-              <h4 class="card-title mb-0 flex-grow-1">Withdraw</h4>
+            <div class="u-card-header align-items-center d-flex">
+              <h4 class="u-card-title mb-0 flex-grow-1">Withdraw</h4>
             </div>
             <div class="card-body">
               <div class="tab-content">
@@ -397,10 +393,10 @@
                   </div> 
                   <h5 class="font-size-14 mb-4">Withdraw Wallet Balance</h5> 
                   <div>
-                      <div>
+                      <div class="amount_input">
                           <div class="input-group mb-3">
                               <label class="input-group-text">Amount</label> 
-                              <input type="number" name="amount" min="1" step="1" onkeypress="" title="Numbers only" placeholder="" class="form-control" aria-required="true" aria-invalid="false"> 
+                              <input class="form-group-control" value="0" type="number" name="amount" min="1" step="1" onkeypress="" title="Numbers only" placeholder="" aria-required="true" aria-invalid="false"> 
                               <label class="input-group-text">$</label> 
                           </div>
                       </div> 

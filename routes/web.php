@@ -19,10 +19,18 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
 Auth::routes();
 
-Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home')->middleware('auth');
+Route::get('/dashboard', 'App\Http\Controllers\HomeController@index')->name('dashboard')->middleware('auth');
+
+// Route::group(['middleware' => ['auth', 'user'], 'prefix' => 'user'], function () {
+//     Route::get('/', 'HomeController@index')->name('user_dashboard');
+// });
+
+// Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function () {
+//     Route::get('/', 'HomeController@index')->name('admin_dashboard');
+// });
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::get('add_funds', function () {
@@ -99,6 +107,28 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('pages.income.elite');
 	})->name('elite_income');
 
+	//withdrawal
+	Route::get('withdrawal_balance', function () {
+		return view('pages.withdrawal.balance');
+	})->name('withdrawal_balance');
+
+	Route::get('withdrawal_report', function () {
+		return view('pages.withdrawal.report');
+	})->name('withdrawal_report');
+
+	//reports
+	Route::get('inv_r', function () {
+		return view('pages.reports.investment_r');
+	})->name('inv_r');
+
+	Route::get('transfer_r', function () {
+		return view('pages.reports.transfer_r');
+	})->name('transfer_r');
+
+	Route::get('wallet_r', function () {
+		return view('pages.reports.wallet_r');
+	})->name('wallet_r');
+	
 	// dd
 	Route::get('table-list', function () {
 		return view('pages.table_list');
