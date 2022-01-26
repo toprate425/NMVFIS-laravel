@@ -30,7 +30,7 @@
       <script>
         document.write(new Date().getFullYear())
       </script>, 
-      <a href="#" target="_blank">NMVFIS</a>, All rights Reserved
+      <a href="{{route('home')}}" target="_blank">NMVFIS</a>, All rights Reserved
     </div>
   </div>
 </footer>

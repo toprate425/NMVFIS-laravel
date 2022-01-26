@@ -2,8 +2,55 @@
 
 @section('content')
   <div class="content">
-    <div class="container-fluid">
-      <div class="row">
+    <div class="row">
+      <div class="col-xl-9">
+        <div class="card">
+          <div class="card-header card-header-icon card-header-rose">
+            <div class="card-icon">
+              <i class="material-icons">perm_identity</i>
+            </div>
+            <h4 class="card-title">Your Profile
+            </h4>
+          </div>
+          <div class="card-body">
+            <form method="post" enctype="multipart/form-data" action="" autocomplete="on" class="form-horizontal">
+              <!-- <input type="hidden" name="_token" value="chTFmMr5qHBrPbDfyabxK6S9KSkewYGe107Qxopv">               -->
+              <input type="hidden" name="_method" value="put">
+              <div class="row" id="profile" aria-describedby="popover251748">
+                <div class="col-sm-7">
+                  <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+                    <div class="fileinput-new thumbnail img-circle">
+                        <img src="{{ asset('material') }}/img/faces/avatar.jpg" alt="avatar">
+                    </div>
+                    <div class="fileinput-preview fileinput-exists thumbnail img-circle"></div>
+                    <div>
+                        <span class="btn btn-rose btn-file">
+                          <span class="fileinput-new">Select image</span>
+                          <span class="fileinput-exists">Change</span>
+                          <input type="file" name="photo" id="input-picture">
+                        </span>
+                        <a href="#pablo" class="btn btn-danger fileinput-exists" data-dismiss="fileinput">
+                          <i class="fa fa-times"></i> Remove
+                        </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="card">
+          <h3>information</h3>
+        </div>
+      </div>
+      <div class="col-xl-3">
+        <div class="card">
+            <div class="card-body">
+                <p>category</p>
+            </div> 
+        </div>
+      </div>
+      <!-- <div class="row">
         <div class="col-md-12">
           <form method="post" action="{{ route('profile.update') }}" autocomplete="off" class="form-horizontal">
             @csrf
@@ -118,7 +165,7 @@
             </div>
           </form>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 @endsection

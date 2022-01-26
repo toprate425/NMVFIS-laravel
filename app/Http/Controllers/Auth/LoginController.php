@@ -1,9 +1,8 @@
 <?php
-
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
@@ -21,20 +20,20 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    // some other functions go here
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    protected function authenticated(Request $request, $user)
     {
-        $this->middleware('guest')->except('logout');
+        // to admin dashboard
+        if($user->isAdmin()) {
+            return redirect(route('dashboard'));
+        }
+
+        // to user dashboard
+        else if($user->isUser()) {
+            return redirect(route('add_funds'));
+        }
+
+        abort(404);
     }
 }

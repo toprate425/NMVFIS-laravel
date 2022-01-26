@@ -1,18 +1,18 @@
-<div class="sidebar" data-color="orange" data-background-color="white" data-image="{{ asset('material') }}/img/sidebar-1.jpg">
+<div class="sidebar" data-color="green" data-background-color="black" data-image="{{ asset('material') }}/img/sidebar-1.jpg">
   <!--
       Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
       Tip 2: you can also add an image using data-image tag
   -->
   <div class="logo">
-    <a href="/home" class="simple-text logo-normal">
+    <a href="/dashboard" class="simple-text logo-normal">
       {{ __('NMVFIS') }}
     </a>
   </div>
   <div class="sidebar-wrapper">
     <ul class="nav">
       <li class="nav-item{{ $activePage == 'dashboard' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('home') }}">
+        <a class="nav-link" href="{{ route('dashboard') }}">
           <i class="material-icons">house</i>
             <p>{{ __('Dashboard') }}</p>
         </a>
@@ -197,7 +197,7 @@
           </ul>
         </div>
       </li>
-      <li class="nav-item{{ $activePage == 'withdrawal' ? ' active' : '' }}">
+      <li class="nav-item{{ ($activePage == 'balance' || $activePage == 'report') ? ' active' : '' }}">
         <a class="nav-link" data-toggle="collapse" href="#withdrawal-c" aria-expanded="true">
           <i class="material-icons">account_balance_wallet</i>
           <p>{{ __('Withdrawal Wallet') }}
@@ -206,14 +206,14 @@
         </a>
         <div class="collapse show" id="withdrawal-c">
           <ul class="nav">
-            <li class="nav-item{{ $activePage == 'withdrawal-balance' ? ' active' : '' }}">
-              <a class="nav-link" href="#">
+            <li class="nav-item{{ $activePage == 'balance' ? ' active' : '' }}">
+              <a class="nav-link" href="{{ route('withdrawal_balance') }}">
                 <span class="sidebar-mini">&nbsp</span>
                 <span class="sidebar-normal">{{ __('Withdrawal Wallet Balance') }} </span>
               </a>
             </li>
-            <li class="nav-item{{ $activePage == 'withdrawal-report' ? ' active' : '' }}">
-              <a class="nav-link" href="#">
+            <li class="nav-item{{ $activePage == 'report' ? ' active' : '' }}">
+              <a class="nav-link" href="{{ route('withdrawal_report') }}">
                 <span class="sidebar-mini">&nbsp</span>
                 <span class="sidebar-normal">{{ __('Withdrawal Report') }} </span>
               </a>
@@ -221,7 +221,7 @@
           </ul>
         </div>
       </li>
-      <li class="nav-item{{ $activePage == 'report' ? ' active' : '' }}">
+      <li class="nav-item{{ ($activePage == 'inv_r' || $activePage == 'transfer_r' || $activePage == 'wallet_r') ? ' active' : '' }}">
         <a class="nav-link" data-toggle="collapse" href="#report-c" aria-expanded="true">
           <i class="material-icons">description</i>
           <p>{{ __('Reports') }}
@@ -230,20 +230,20 @@
         </a>
         <div class="collapse show" id="report-c">
           <ul class="nav">
-            <li class="nav-item{{ $activePage == 'report-investment' ? ' active' : '' }}">
-              <a class="nav-link" href="#">
+            <li class="nav-item{{ $activePage == 'inv_r' ? ' active' : '' }}">
+              <a class="nav-link" href="{{ route('inv_r') }}">
                 <span class="sidebar-mini">&nbsp</span>
                 <span class="sidebar-normal">{{ __('Investment Report') }} </span>
               </a>
             </li>
-            <li class="nav-item{{ $activePage == 'report-wallet-transfer' ? ' active' : '' }}">
-              <a class="nav-link" href="#">
+            <li class="nav-item{{ $activePage == 'transfer_r' ? ' active' : '' }}">
+              <a class="nav-link" href="{{ route('transfer_r') }}">
                 <span class="sidebar-mini">&nbsp</span>
                 <span class="sidebar-normal">{{ __('Withdrawal Wallet to Cash Wallet Transfer Report') }} </span>
               </a>
             </li>
-            <li class="nav-item{{ $activePage == 'report-cash-wallet' ? ' active' : '' }}">
-              <a class="nav-link" href="#">
+            <li class="nav-item{{ $activePage == 'wallet_r' ? ' active' : '' }}">
+              <a class="nav-link" href="{{ route('wallet_r') }}">
                 <span class="sidebar-mini">&nbsp</span>
                 <span class="sidebar-normal">{{ __('Cash Wallet to Other member Cash Wallet Report') }} </span>
               </a>
@@ -262,7 +262,7 @@
   <!-- <div class="sidebar-wrapper">
     <ul class="nav">
       <li class="nav-item{{ $activePage == 'dashboard' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('home') }}">
+        <a class="nav-link" href="{{ route('dashboard') }}">
           <i class="material-icons">dashboard</i>
             <p>{{ __('Dashboard') }}</p>
         </a>
